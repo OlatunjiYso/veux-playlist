@@ -7,6 +7,7 @@
        <span class="price"> $ {{product.price}}  </span>
        </li>
   </ul>
+  <button v-on:click ="reduceThePrice"> Reduce price </button>
   </div>
 </template>
 
@@ -19,6 +20,11 @@ export default {
    salesProducts() {
      return this.$store.getters.salesProducts
    },
+ },
+ methods: {
+   reduceThePrice: function() {
+     return this.$store.commit('reducePrice')
+   }
  }
 }
 </script>
